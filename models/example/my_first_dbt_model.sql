@@ -7,7 +7,7 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 with source_data as (
 
@@ -20,8 +20,19 @@ with source_data as (
 select *
 from source_data
 
+  
+-- with stg_custome as
+-- (
+--     select c1,c2,c3,c4
+--     from  analytic_schema.customers
+--     limit 10
+-- ) 
+ 
+--  select * from stg_custome
+
+
+
 /*
     Uncomment the line below to remove records with null `id` values
 */
-
--- where id is not null
+--where id is not null
