@@ -1,0 +1,1 @@
+select count(*) from MACRO_EG where c1 >10 
